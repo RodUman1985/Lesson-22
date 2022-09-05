@@ -1,9 +1,12 @@
 package com.company;
 
+import com.sun.jmx.remote.internal.ArrayQueue;
+
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class Main {
 
@@ -70,7 +73,7 @@ public class Main {
         list.ensureCapacity(12);
         ArrayList<String> list2 = new ArrayList<>(100);
         //LinkedList==ArrayList  кроме Capacity
-        System.out.println("ArrayList");
+       /* System.out.println("ArrayList");
         addToBegin(new ArrayList<>());
         addToEnd(new ArrayList<>());
         addToMidl(new ArrayList<>());
@@ -82,7 +85,29 @@ public class Main {
         System.out.println("LinkedList");
         addToBegin(new LinkedList<>());
         addToEnd(new LinkedList<>());
-        addToMidl(new LinkedList<>());
+        addToMidl(new LinkedList<>());*/
+
+        //Queue (очередь) организованны по FIFO
+        // FIFO (first in, first out) (первым пришел, первым вышел)
+        // Stack (стек)   организованны по LIFO
+        // LIFO (last in, first out) (последний зашел, первый вышел)
+        Stack<String> stack= new Stack<>();
+        stack.push("the");// добавляет элемент в начало стека (вершина кучи)
+        stack.push("Emperor");
+        stack.push("Protects");
+        stack.push("always !!!");
+        // peek возврашает верхний элемент стека без его удаления
+        System.out.println(stack.peek());
+        // pop возврашает верхний элемент стека с его удалением
+        System.out.println(stack.pop());
+        System.out.println(stack);
+        ArrayQueue<Integer>  q = new ArrayQueue<>(100);
+        q.add(1);// добовляет элемент в конец очерреди
+        q.add(2);
+        q.add(3);
+        q.add(4);
+        System.out.println(q.get(2));
+
     }
 
 
